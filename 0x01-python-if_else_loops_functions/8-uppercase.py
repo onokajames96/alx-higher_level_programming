@@ -4,7 +4,7 @@ def uppercase(str):
         if 'a' <= num <= 'z':
             print(chr(ord(num) - ord('a') + ord('A')), end='')
         else:
-            print(num, end='')
+            print("{}".format(num), end="")
     print()
 
 
