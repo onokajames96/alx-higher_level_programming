@@ -5,7 +5,6 @@
 class Square:
     """new square"""
 
-
     def __init__(self, size):
 
     """initializes the __size attribute.
@@ -15,5 +14,4 @@ class Square:
             size (int): Size of the new square.
 
         """
-
         self.__size = size
