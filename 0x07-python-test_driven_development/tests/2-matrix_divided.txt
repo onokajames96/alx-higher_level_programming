@@ -1,0 +1,37 @@
+# Test cases for matrix_divided function
+
+# Test case 1: Divide a 3x3 matrix by 2
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
+
+# Test case 2: Divide a 2x2 matrix by 0 (division by zero)
+>>> matrix = [[1, 2], [3, 4]]
+>>> div = 0
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+# Test case 3: Matrix with invalid elements (not numbers)
+>>> matrix = [[1, 'a', 3], [4, 5, 6], [7, 8, 9]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test case 4: Matrix with rows of different lengths
+>>> matrix = [[1, 2, 3], [4, 5], [7, 8, 9]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+...
+ValueError: Each row of the matrix must have the same size
+
+# Test case 5: Divide a 2x2 matrix by 3 (resulting in floating-point numbers)
+>>> matrix = [[2, 4], [6, 8]]
+>>> div = 3
+>>> matrix_divided(matrix, div)
+[[0.67, 1.33], [2.0, 2.67]]
