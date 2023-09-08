@@ -1,0 +1,25 @@
+"print_square" module
+
+>>> from 4-print_square import print_square
+
+>>> size = None
+
+>>> print_square(size)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+>>> size = 0
+>>> print_square(size)
+
+>>> size = -1
+>>> print_square(size)
+Traceback (most recent call last):
+  ...
+ValueError: size must be >= 0
+>>> size = -13.5
+>>> print_square(size)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+>>>
