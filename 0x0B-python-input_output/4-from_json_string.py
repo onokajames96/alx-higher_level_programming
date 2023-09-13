@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#Onoka J
 """
 A function that returns an object (Python data structure)
 represented by a JSON string.
