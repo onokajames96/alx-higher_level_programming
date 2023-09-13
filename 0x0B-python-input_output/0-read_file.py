@@ -3,6 +3,8 @@
 A function that reads a Text file.
 """
 
+
+
 def read_file(filename=""):
     """
     Read and print the content of a text file.
