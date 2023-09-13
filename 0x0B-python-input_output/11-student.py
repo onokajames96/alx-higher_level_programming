@@ -14,7 +14,7 @@ class Student:
             last_name (str): The students last name.
             age (int): The age of the student.
         """
-         self.first_name = first_name
+        self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
@@ -35,5 +35,5 @@ class Student:
         Args:
             json (dict): A dictionary containing attribute key and values.
         """
-         for key, v in json.items():
-             setattr(self, key, v)
+        for key, v in json.items():
+            setattr(self, key, v)
