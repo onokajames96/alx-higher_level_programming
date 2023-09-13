@@ -2,6 +2,8 @@
 """
 A file writing function Defined.
 """
+
+
 def write_file(filename="", text=""):
     """
     Write a string to a text file (UTF-8)
