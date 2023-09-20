@@ -43,7 +43,7 @@ class Base:
         Returns the JSON string representation of list_dictionaries.
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return  "[]"
+            return "[]"
         else:
             return json.dumps(list_dictionaries)
 
@@ -60,7 +60,7 @@ class Base:
         class_name = cls.__name__
         filename = cls.__name__ + ".json"
         json_string = cls.to_json_string([obj.to_dictionary()
-            for obj in list_objs])
+                for obj in list_objs])
 
         with open(filename, "w") as file:
             file.write(json_string)
@@ -75,12 +75,13 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-         if cls.__name__ == "Rectangle":
-             dummy = cls(1, 1)
-         elif cls.__name__ == "Square":
-             dummy = cls(1)
-         dummy.update(**dictionary)
-         return dummy
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+
+        return dummy
 
     @classmethod
     def load_from_file(cls):
@@ -94,6 +95,4 @@ class Base:
                  return my_list
              except FileNotFoundError:
                  return []
-
-    @classmethod
 

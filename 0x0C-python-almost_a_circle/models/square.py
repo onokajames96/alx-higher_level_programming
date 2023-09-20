@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for the Square class"""
+"""Module for the Square class."""
 from models.rectangle import Rectangle
 
 
@@ -34,3 +34,22 @@ class Square(Rectangle):
         """Returns a string representation of the Square."""
         return '[Square] ({}) {}/{} - {}' \
             .format(self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """Update the square's attributes"""
+        if args:
+            attr = ['id', 'size', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, attr[i], arg)
+            else:
+                for key, v in kwargs.items():
+                    self.__setattr__(key, v)
+
+    def to_dictionary(self):
+        """Returns the dictionary represantation of the class square."""
+        return {
+            'id': self.id,
+            'size': self.width,
+            'x': self.x,
+            'y': self.y
+        }
