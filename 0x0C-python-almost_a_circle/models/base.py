@@ -60,14 +60,14 @@ class Base:
         class_name = cls.__name__
         filename = cls.__name__ + ".json"
         json_string = cls.to_json_string([obj.to_dictionary()
-                for obj in list_objs])
+                                         for obj in list_objs])
 
         with open(filename, "w") as file:
             file.write(json_string)
 
     @staticmethod
     def from_json_string(json_string):
-        """ """
+        """Converts a JSON string to a list of dictionaries."""
         if json_string is None or json_string == "":
             return []
         else:
@@ -75,6 +75,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Returns an instance of the class with attributes set."""
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         if cls.__name__ == "Square":
@@ -85,14 +86,16 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        filename = str(cls.__name__) + ".json"
+        """Returns A list of instances."""
+        filename = cls.__name__ + ".json"
+        instances = []
 
         try:
-            with open(file_name, "r") as file:
+            with open(filename, "r") as file:
                 json_string = file.read()
-                list_dicts = cls.from_json_string(json_data)
-                 my_list = [cls.create(**item) for item in list_dicts
-                 return my_list
-             except FileNotFoundError:
-                 return []
+                list_dicts = cls.from_json_string(json_string)
+                instances = [cls.create(**item) for item in list_dicts]
+        except FileNotFoundError:
+            pass
 
+        return instances
