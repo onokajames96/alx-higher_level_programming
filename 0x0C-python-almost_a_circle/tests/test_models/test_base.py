@@ -23,3 +23,4 @@ class TestBase(unittest.TestCase):
 
     def test_empty_to_json_string(self):
         json_string = Base.to_json_string([])
+

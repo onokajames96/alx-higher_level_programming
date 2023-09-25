@@ -137,3 +137,33 @@ class Base:
                 return [cls.create(**m) for m in obj_list]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ Draw a list of rectangles and squares using the Turtle module."""
+        screen = turtle.Screen()
+        screen.bgcolor("DarkRed")
+
+        t = turtle.Turtle()
+        t.pensize(3)
+        t.shape("turtle")
+
+        def draw_shape(shape, color):
+            """Draw a list of shapes with a specified color."""
+            t.color(color)
+            for item in shape:
+                t.showturtle()
+                t.penup()
+                t.goto(item.x, item.y)
+                t.down()
+                for _ in range(2):
+                    t.forward(item.width)
+                    t.left(90)
+                    t.forward(item.height)
+                    t.left(90)
+                t.hideturtle()
+
+            draw_shape(list_rectangles, "White")
+            draw_shape(list_squares, "LightBlue")
+
+            turtle.exitonclick()
