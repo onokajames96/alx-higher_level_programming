@@ -2,6 +2,7 @@
 """Module for Base class"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -99,3 +100,40 @@ class Base:
             pass
 
         return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes and write in CSV."""
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode="w", newline="") as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                elif cls.__name__ == "Square":
+                    fieldnames = ["id", "size", "x", "y"]
+                else:
+                    fieldnames = []
+
+                if fieldnames:
+                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                    for obj in list_objs:
+                        writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes a CSV file and creates objects."""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as csvfile:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                obj_list = csv.DictReader(csvfile, fieldnames=fieldnames)
+                obj_list = [dict([key, int(val)] for key, val in m.items())
+                            for m in obj_list]
+                return [cls.create(**m) for m in obj_list]
+        except IOError:
+            return []
