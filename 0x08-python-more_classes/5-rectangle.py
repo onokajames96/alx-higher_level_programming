@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 """A class Rectangle that defines a rectangle by:"""
+
 
 class Rectangle:
     """class Rectangle"""
@@ -15,7 +15,6 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-
 
     @property
     def width(self):
