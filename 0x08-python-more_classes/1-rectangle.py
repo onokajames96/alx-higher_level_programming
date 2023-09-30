@@ -3,6 +3,7 @@
 
 """Class rectangle"""
 
+
 class Rectangle():
     """Rectangle class defined"""
 
@@ -25,7 +26,7 @@ class Rectangle():
     def width(self, value):
         """Setter for width, to set width"""
 
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("width must be an integer")
 
         elif value < 0:
@@ -41,7 +42,7 @@ class Rectangle():
     @height.setter
     def height(self, value):
         """Setter for height, to set height"""
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("height must be an integer")
 
         elif value < 0:
