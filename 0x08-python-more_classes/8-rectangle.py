@@ -56,7 +56,10 @@ class Rectangle:
             return 2 * (self.width + self.height)
 
     def __repr__(self):
-        """A string representation of the rectangle using print_symbol returned."""
+        """
+        A string representation of
+        the rectangle using print_symbol returned.
+        """
         return "Rectangle({}, {})".format(self.width, self.height)
 
     def __str__(self):
