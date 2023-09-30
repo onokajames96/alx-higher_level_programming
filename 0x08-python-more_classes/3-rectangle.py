@@ -2,8 +2,6 @@
 """Class Rectangle"""
 
 
-
-
 class Rectangle:
     """defines a rectnangle.
     """
@@ -29,7 +27,7 @@ class Rectangle:
 
         """Set the width."""
 
-        if not isinstance(value, int):
+        if type(value) is not int:
 
             raise TypeError("width must be an integer")
 
@@ -38,7 +36,6 @@ class Rectangle:
             raise ValueError("width must be >= 0")
 
         self.__width = value
-
 
     @property
     def height(self):
@@ -50,7 +47,7 @@ class Rectangle:
     def height(self, value):
         """Sets it."""
 
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("height must be an integer")
 
         if value < 0:
@@ -81,8 +78,11 @@ class Rectangle:
         rectangle_str = ""
 
         for _ in range(self.__height):
-            rectangle_str += "#" * self.__width + "\n"
-            return rectangle_str[:-1]
+            rectangle_str += "{}".format("#" * self.__width)
+            if _ < self.__height - 1:
+                rectangle_str += "\n"
+
+            return rectangle_str
 
     def __repr__(self):
         """__repr__
