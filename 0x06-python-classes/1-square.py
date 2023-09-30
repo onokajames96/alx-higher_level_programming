@@ -8,7 +8,6 @@ class Square:
         """initializes the __size attribute.
 
         Args:
-            
             size (int): Size of the new square.
 
         """
