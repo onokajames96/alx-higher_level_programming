@@ -17,13 +17,13 @@ class Rectangle:
 
     @property
     def width(self):
-        """Getter to retrieve it"""
+        """Getter to retrieve it."""
 
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ """
+        """ Set the width."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
 
@@ -34,13 +34,13 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get the height"""
+        """Get the height."""
 
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the height"""
+        """Set the height."""
 
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -51,13 +51,12 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """That returns the area of rectangle"""
+        """Returns the area of rectangle."""
 
         return self.__width * self.__height
 
     def perimeter(self):
-
-        """That returns the rectangula's perimeter"""
+        """Returns the rectangula's perimeter."""
 
         if self.__width == 0 or self.__height == 0:
             return (0)
