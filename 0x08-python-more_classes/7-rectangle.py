@@ -77,10 +77,8 @@ class Rectangle:
         rectangle_str = ""
 
         for num in range(self.height):
-            rectangle_str = str(self.print_symbol) * self.width
-            if num < self.__height - 1:
-                rectangle_str += "\n"
-            return rectangle_str
+            rectangle_str += str(self.print_symbol) * self.width + "\n"
+        return rectangle_str[:-1]
 
     def __repr__(self):
         """
