@@ -2,6 +2,8 @@
 
 """Class Rectangle.
 """
+
+
 class Rectangle:
     def __init__(self, width=0, height=0):
         """Initialization of Constructor.
@@ -18,6 +20,7 @@ class Rectangle:
         """Getter to retrieve it"""
 
         return self.__width
+
     @width.setter
     def width(self, value):
         """ """
@@ -34,6 +37,7 @@ class Rectangle:
         """Get the height"""
 
         return self.__height
+
     @height.setter
     def height(self, value):
         """Set the height"""
@@ -61,17 +65,22 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """ """
-
+        """Returns a string."""
         if self.__width == 0 or self.__height == 0:
             return ""
         rectangle_str = ""
-        for x in range(self.__height):
-            rectangle_str += "#" * self.__width + "\n"
 
-            return rectangle_str.rstrip()
+        for _ in range(self.__height):
+            rectangle_str += "{}".format("#" * self.__width)
+            if _ < self.__height - 1:
+                rectangle_str += "\n"
+
+        return rectangle_str
 
     def __repr__(self):
         """Return a string representation of the rectangle."""
 
-        return f"Rectangle({self.__width}, {self.__height})"
+        rectangle_str = ("Rectangle({:d}, {:d})"
+                         .format(self.__width, self.__height))
+
+        return rectangle_str
