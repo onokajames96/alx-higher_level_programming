@@ -2,6 +2,7 @@
 
 """Class Rectangle"""
 
+
 class Rectangle:
 
     """Defines Rectangle"""
