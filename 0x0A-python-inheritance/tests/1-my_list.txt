@@ -1,0 +1,8 @@
+The  1-my_list`` module
+============================
+
+"""Using Module 1-my_lists that inherits from lists."""
+
+>>> MyList = __import__('1-my_list').MyList
+
+
