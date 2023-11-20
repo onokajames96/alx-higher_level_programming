@@ -14,7 +14,7 @@ if __name__ == "__main__":
             ON states.id = cities.state_id\
             WHERE states.name = %s\
             ORDER BY cities.id ASC", (sys.argv[4],))
-    row = c.fetchall()
+    rows = c.fetchall()
     print(", ".join([row[0] for row in rows]))
 
     c.close()
