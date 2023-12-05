@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 Sends a request to a URL and displays the body of the response.
-Prints an error message if the HTTP status code is greater than or equal to 400.
+Prints an error message if the HTTP status
+code is greater than or equal to 400.
 """
 import requests
 from sys import argv
